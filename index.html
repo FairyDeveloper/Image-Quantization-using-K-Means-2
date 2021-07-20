@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>k-means Image Color Quantization</title> 
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <!-- Add a spacer div so text doesn't overlap with "Fork me on GitHub" -->
+  <div style="width: 100px; height: 100px; float: right; display: inline-block"></div>
+  <a href="https://github.com/dstein64/k-means-quantization-js">
+    <img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;"
+         src="forkme_right_white_ffffff.png"
+         alt="Fork me on GitHub">
+  </a>
+
+  <h1><em>k</em>-means Image Color Quantization</h1>
+  <p>Select an image (<em>gif</em>, <em>jpeg</em>, <em>png</em>, or <em>svg</em>),
+  select a value for <em>k</em>, then click <em>Quantize</em>.</p>
+  <p>The quantized image can be saved by using your browser&#8217;s
+  <em>Save Image As...</em> functionality, invoked by right-clicking the image.</p>
+  <label for="k_selections">k = </label>
+  <!-- Selection options are set below with javascript -->
+  <select id="k_selections"></select>
+  &emsp;
+  <!--
+      The list of "considered Web safe" image formats are from:
+        https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#Images_types
+  -->
+  <input id="input_file" type="file" accept="image/gif,image/jpeg,image/png,image/svg+xml">
+  <br><br>
+  <button id="quantize_btn" disabled>Quantize</button>
+  &emsp;
+  <span id="status"></span>
+  <br><br>
+
+  <div id="modal">
+    <span id="close">&times;</span>
+    <div id="modal_inner">
+      <img id="quantized_img" src="data:," alt>
+    </div>
+  </div>
+
+<script src="core.js"></script>
+</body>
+</html>
